@@ -1,18 +1,29 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+//import './App.css';
+import TodoList from './components/TodoList';
+
+
+  const todos=[
+            {task:"Buy medicines", isCompleted:"false"},
+            {task:"Buy meat", isCompleted:"false"},
+            {task:"Buy groceries", isCompleted:"false"},
+            {task:"Learn React", isCompleted:"false"},
+            {task:"Find a girlfriend", isCompleted:"false"}
+        ];
 
 class App extends Component {
+  
+  constructor(props){
+    super(props);
+
+     this.state={todos};
+
+  }
+  
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+          <TodoList todos={this.state.todos}/>
       </div>
     );
   }
